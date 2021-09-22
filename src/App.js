@@ -1,22 +1,20 @@
-import logo from "./logo.svg";
+import React from 'react';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
+import LecturesPage from "./Pages/LecturesPage"
+import Events from './Pages/Events'
+import Signin from './Pages/SignIn'
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Base Project for Alerting Module.</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" Component={LecturesPage}/>
+        <Route path="/upcoming-events" Component={Events}/>
+        <Route path="/register" Component={Signin}/>
+      </Switch>
+    </Router>
+   
   );
 }
 
