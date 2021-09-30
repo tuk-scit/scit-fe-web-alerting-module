@@ -1,22 +1,17 @@
-import React from 'react'
-import colors from '../resources/ThemeColors'
-import Button from "@material-tailwind/react/Button";
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import colors from '../resources/ThemeColors'
+import Button from "@material-tailwind/react/Button";
 
 function classNames(...classes){
     return classes.filter(Boolean).join("")
 }
 
-export default function Signin(){
+export default function DropDown(){
     return(
         <Menu as="div" style={{background:colors.background,marginTop:"0px",height:'100vh',overflow:'hidden'}}>
        <div class ="classyou in">
-           <div>
-           <p style={{paddingTop:"30px", marginTop:"10px", marginLeft:"45%",fontWeight:"bold", fontSize:"25px"}}> A bit about you</p>
-     
-           </div>
          <div>
            <Menu.Button style={{
                position: 'relative',
@@ -232,3 +227,4 @@ export default function Signin(){
     </Menu>
     )
 }
+
