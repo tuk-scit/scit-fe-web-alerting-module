@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../../resources/ThemeColors";
+import colors from "../../resources/ThemeColors";
 import Bell from "../../resources/icons/bell.png";
 import Clock from "../../resources/icons/clock.png";
 import Pin from "../../resources/icons/pin.png";
