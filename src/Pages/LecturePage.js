@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../resources/ThemeColors";
+import colors from "../resources/ThemeColors";
 import LectureCard from "../Components/Cards/LectureCard";
 
 export default function LecturePage() {

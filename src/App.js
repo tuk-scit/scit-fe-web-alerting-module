@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import EventsPage from "./Pages/EventsPage";
+import Events from "./Pages/EventsPage";
 import LecturePage from "./Pages/LecturePage";
 import Signin from "./Pages/SignIn";
 import "./App.css";
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={LecturePage} />
-        <Route path="/upcoming-events" component={EventsPage} />
+        <Route path="/upcoming-events" component={Events} />
         <Route path="/register" component={Signin} />
       </Switch>
     </Router>
