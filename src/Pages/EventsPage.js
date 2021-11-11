@@ -11,6 +11,10 @@ export default function Events() {
   // called when DOM (page) is loaded
   useEffect(() => {
     setLoading(true);
+
+    const selectedYear = localStorage.getItem("year");
+    const selectedClass = localStorage.getItem("class");
+
     const fetchData = async () => {
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");

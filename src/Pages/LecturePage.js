@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import colors from "../resources/ThemeColors";
 import LectureCard from "../Components/Cards/LectureCard";
 
 export default function LecturePage() {
+  useEffect(() => {
+    const selectedYear = localStorage.getItem("year");
+    const selectedClass = localStorage.getItem("class");
+  }, []);
   return (
     <MainDiv>
       <h1>Upcoming Lectures</h1>
