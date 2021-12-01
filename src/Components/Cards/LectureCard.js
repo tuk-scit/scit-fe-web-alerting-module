@@ -6,25 +6,25 @@ import Clock from "../../resources/icons/clock.png";
 import Pin from "../../resources/icons/pin.png";
 import Dot from "../../resources/icons/circle-with-color.png";
 
-export default function LectureCard() {
+export default function LectureCard({ data }) {
   return (
     <MainDiv>
       <TitleDiv>
-        <h2>Legal & Ethics</h2>
+        <h2>{data.title}</h2>
         <img src={Bell} alt="notification icon"></img>
       </TitleDiv>
-      <ByText>by Okoth</ByText>
+      <ByText>by {data.lecturer}</ByText>
       <TimeDiv>
-        <img src={Clock} alt="time icon"></img> <h4>10 am</h4>
+        <img src={Clock} alt="time icon"></img> <h4>{data.time}</h4>
       </TimeDiv>
       <LocationDayDiv>
         <div>
           <img src={Pin} alt="location icon"></img>
-          <h4>D33</h4>
+          <h4>{data.room}</h4>
         </div>
         <div style={{ marginRight: "0", marginLeft: "auto" }}>
           <img src={Dot} alt="day dot"></img>
-          <h4>Wednesday</h4>
+          <h4>{data.day}</h4>
         </div>
       </LocationDayDiv>
     </MainDiv>

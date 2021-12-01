@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <MainDiv>
-      <Link to="/upcoming-lectures">
+      <Link to={`/upcoming-lectures/${localStorage.getItem("class")}`}>
         {" "}
         <img src={Home} alt=""></img>
       </Link>
