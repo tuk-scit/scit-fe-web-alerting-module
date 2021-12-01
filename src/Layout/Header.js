@@ -4,7 +4,7 @@ import Home from "../resources/home.png";
 import Stage from "../resources/stage.png";
 import { Link } from "react-router-dom";
 
-export default function Footer() {
+export default function Header() {
   return (
     <MainDiv>
       <Link to="/upcoming-lectures">
@@ -21,7 +21,7 @@ export default function Footer() {
 
 const MainDiv = styled.div`
   position: fixed;
-  bottom: 0;
+  top: 0;
   z-index: 10;
   height: 10vh;
   background-color: #43718c;
@@ -29,10 +29,10 @@ const MainDiv = styled.div`
   padding: 1em 2em 1em 2em;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-end;
+  justify-content: space-evenly;
 
-  @media (min-width: 600px) {
+  @media (max-width: 601px) {
     display: none;
   }
 `;
