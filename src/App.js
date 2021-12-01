@@ -18,7 +18,7 @@ function App() {
         <Route path="/upcoming-events" component={Events} />
         {/* <Route path="/register" component={Signin} /> */}
         <Route path="/register" component={Register} />
-        <Route path="/upcoming-lectures" component={LecturePage} />
+        <Route path="/upcoming-lectures/:class" component={LecturePage} />
         <Route component={Lost} />
       </Switch>
       <Footer />

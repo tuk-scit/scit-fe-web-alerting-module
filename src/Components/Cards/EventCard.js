@@ -7,25 +7,25 @@ import Clock from "../../resources/icons/clock.png";
 import Pin from "../../resources/icons/pin.png";
 import Dot from "../../resources/icons/circle-with-color.png";
 
-export default function EventCard() {
+export default function EventCard({ data }) {
   return (
     <MainDiv>
       <TitleDiv>
-        <h2>cultural week</h2>
+        <h2>{data.name}</h2>
         <img src={Bell} alt="notification icon"></img>
       </TitleDiv>
       <ByText>by saTUK</ByText>
-      <TimeDiv>
+      {/* <TimeDiv>
         <img src={Dot} alt="day dot"></img> <h4>Friday</h4>
-      </TimeDiv>
+      </TimeDiv> */}
       <LocationDayDiv>
         <div>
           <img src={Pin} alt="location icon"></img>
-          <h4>D33</h4>
+          <h4>{data.location}</h4>
         </div>
         <div style={{ marginRight: "0", marginLeft: "auto" }}>
           <img src={Clock} alt="tim icon"></img>
-          <h4>10am to 2pm</h4>
+          <h4>{data.date}</h4>
         </div>
       </LocationDayDiv>
     </MainDiv>
@@ -34,7 +34,7 @@ export default function EventCard() {
 
 const MainDiv = styled.div`
   height: auto;
-  width: 358px;
+  width: 348px;
   background-color: ${colors.bluish};
   border: none;
   border-radius: 8px;

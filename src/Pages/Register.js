@@ -27,23 +27,17 @@ const people = [
 const years = [
   {
     id: 1,
-    name: "1st Year",
+    name: "SCII/2018",
   },
   {
     id: 2,
-    name: "2nd Year",
+    name: "SCCI/2018",
     avatar:
       "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
     id: 3,
-    name: "3rd Year",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80",
-  },
-  {
-    id: 4,
-    name: "4th Year",
+    name: "SCCJ/2018",
     avatar:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80",
   },
@@ -54,23 +48,23 @@ function classNames(...classes) {
 }
 
 export default function Signin() {
-  const [selected, setSelected] = useState(people[2]);
+  const [selected, setSelected] = useState(years[2]);
   const [selectedYear, setSelectedYear] = useState(years[2]);
 
   const onSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("class", selected.name);
     localStorage.setItem("year", selectedYear.id);
-    window.location.href = "/upcoming-lectures";
+    window.location.href = `/upcoming-lectures/${selected.name}`;
   };
 
   return (
     <MainDiv>
-      <h2>A bit about yourself</h2>
+      {/* <h2>A bit about yourself</h2> */}
       <ListBoxDiv>
         <Listbox value={selected} onChange={setSelected}>
           <Listbox.Label className="block text-l font-medium text-gray-700">
-            Class
+            Select your class code
           </Listbox.Label>
           <div className="mt-1 relative w-1/2">
             <Listbox.Button className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -92,7 +86,7 @@ export default function Signin() {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                {people.map((person) => (
+                {years.map((person) => (
                   <Listbox.Option
                     key={person.id}
                     className={({ active }) =>
@@ -135,7 +129,7 @@ export default function Signin() {
           </div>
         </Listbox>
         <div className="mt-8"></div>
-        <Listbox value={selectedYear} onChange={setSelectedYear}>
+        {/* <Listbox value={selectedYear} onChange={setSelectedYear}>
           <Listbox.Label className="block text-l font-medium text-gray-700">
             Year of Study
           </Listbox.Label>
@@ -200,7 +194,7 @@ export default function Signin() {
               </Listbox.Options>
             </Transition>
           </div>
-        </Listbox>
+        </Listbox> */}
         <div className="w-1/2">
           <button
             className="mt-4 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
